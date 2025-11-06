@@ -193,7 +193,8 @@ body {
 /* Untuk Ponsel (max-width: 768px) */
 @media (max-width: 768px) {
     .home {
-        background-position: 70% center;
+        background-size: 150% auto;
+        background-position: 90% center;
         text-align: center; /* Tengahkan teks di HP */
         align-items: center;
         padding-left: 0; /* Hapus padding kiri */
