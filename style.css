@@ -8,23 +8,26 @@
 }
 
 body {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     min-height: 100vh;
+    width: 100%; 
     color: #285430;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 .home {
     background: url('home_bg2.png') no-repeat;
     background-size: cover; 
-    background-position: right center;
+    background-position: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
     width: 100%; 
     min-height: 100vh;
-    padding-left: 70px; /* Gunakan padding, lebih baik dari margin-left */
-    margin: 0px auto;
+    padding-left: 70px; 
+    margin: 0px;
 }
 
 .menu, .topics, .rule, .maps {
@@ -191,7 +194,7 @@ body {
 /* Untuk Ponsel (max-width: 768px) */
 @media (max-width: 768px) {
     .home {
-        background-size: cover;
+        background-size: 100% auto;
         background-position: center;
         text-align: center; /* Tengahkan teks di HP */
         align-items: center;
