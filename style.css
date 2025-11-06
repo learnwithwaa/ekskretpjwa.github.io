@@ -8,18 +8,15 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
     min-height: 100vh;
     color: #285430;
-    /* Mencegah scroll horizontal yang disebabkan oleh elemen anak yang melebihi batas */
     overflow-x: hidden; 
 }
 
 .home {
     background: url('home_bg2.png') no-repeat;
     background-size: cover; 
-    background-position: 70% center;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -27,6 +24,7 @@ body {
     width: 100%; 
     min-height: 100vh;
     padding-left: 70px; /* Gunakan padding, lebih baik dari margin-left */
+    margin: 0px auto;
 }
 
 .menu, .topics, .rule, .maps {
@@ -194,7 +192,7 @@ body {
 @media (max-width: 768px) {
     .home {
         background-size: 150% auto;
-        background-position: 90% center;
+        background-position: 75% center;
         text-align: center; /* Tengahkan teks di HP */
         align-items: center;
         padding-left: 0; /* Hapus padding kiri */
