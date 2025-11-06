@@ -8,41 +8,41 @@
 }
 
 body {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     min-height: 100vh;
-    width: 100%; 
     color: #285430;
-    overflow-x: hidden;
+    /* Mencegah scroll horizontal yang disebabkan oleh elemen anak yang melebihi batas */
+    overflow-x: hidden; 
 }
 
 .home {
     background: url('home_bg2.png') no-repeat;
-    background-size: cover; 
+    background-size: cover; /* Pastikan selalu menutupi layar */
     background-position: center;
+    /* Properti flex diatur di sini untuk halaman Home */
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    width: 100%; 
+    width: 100%; /* Penting untuk responsif */
     min-height: 100vh;
-    padding-left: 70px; 
-    margin: 0px;
+    padding-left: 70px; /* Gunakan padding, lebih baik dari margin-left */
 }
 
 .menu, .topics, .rule, .maps {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Menengahkan konten di layar besar */
+    align-items: center; 
     min-height: 100vh;
-    padding: 100px 15%;
+    padding: 20px 9%;
     background: url('body_bg.png');
     background-size: cover;
     background-position: center;
     color: #2f4f39;
     text-align: center;
-    width: 100%; /* Penting untuk responsif */
+    width: 100%; 
 }
 
 .heading-m, .heading-tp, .heading-rl, .heading-mp {
@@ -57,7 +57,7 @@ body {
     line-height: 1;
 }
 
-.home h1, .title { 
+.home h1, .title { /* Menggabungkan h1 dan title */
     font-weight: 800;
     color: #285430;
     letter-spacing: 2px;
@@ -66,6 +66,7 @@ body {
     margin: 2px 0 10px;
 }
 
+/* Tombol START */
 .btn-start {
     display: inline-flex;
     justify-content: center;
@@ -93,6 +94,7 @@ body {
     box-shadow: 0 0 15px #93DA97;
 }
 
+/* Wadah untuk Kartu (Menu, Topics, Rule, Maps) */
 .wrapper-menu, .wrapper-tp, .wrapper-rl, .wrapper-mp {
     display: grid;
     /* Grid 4 kolom untuk desktop */
@@ -128,6 +130,7 @@ body {
     margin: 10px 0 18px;
 }
 
+/* Tombol Menu */
 .box .btn-menu, .box .btn-tp, .box .btn-rl, .box .btn-mp {
     display: inline-block;
     padding: 4px 10px;
@@ -185,6 +188,7 @@ body {
         padding-left: 30px; /* Kurangi padding di layar lebih kecil */
     }
 
+    /* Mengubah menu/topics dari 4 kolom menjadi 2 kolom */
     .wrapper-menu, .wrapper-tp, .wrapper-rl, .wrapper-mp {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -194,8 +198,8 @@ body {
 /* Untuk Ponsel (max-width: 768px) */
 @media (max-width: 768px) {
     .home {
-        background-size: 100% auto;
-        background-position: center;
+        background-size: 150% auto;
+        background-position: 75% center;
         text-align: center; /* Tengahkan teks di HP */
         align-items: center;
         padding-left: 0; /* Hapus padding kiri */
@@ -206,19 +210,17 @@ body {
         letter-spacing: 1px;
     }
 
-    /* Mengubah menu/topics dari 2 kolom menjadi 1 kolom di HP */
     .wrapper-menu, .wrapper-tp, .wrapper-rl, .wrapper-mp {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
-    /* Memastikan kartu menu mengambil lebar penuh di HP */
+    
     .wrapper-menu .box, .wrapper-tp .box, .wrapper-rl .box, .wrapper-mp .box {
         max-width: 100%; 
     }
     
     .menu, .topics, .rule, .maps {
-        padding: 40px 5%; /* Kurangi padding horizontal agar lebih lega */
+        padding: 20px 5%; /* Kurangi padding horizontal agar lebih lega */
         text-align: center;
     }
 
