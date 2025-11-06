@@ -1,79 +1,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
+/* ================================================= */
+/* HOME PAGE & BASE STYLES */
+/* ================================================= */
 
 body {
     display: flex;
     align-items: center;
     min-height: 100vh;
-    color: #285430;
-    /* Mencegah scroll horizontal yang disebabkan oleh elemen anak yang melebihi batas */
-    overflow-x: hidden; 
+    background: url('home_bg2.png') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .home {
-    background: url('home_bg2.png') no-repeat;
-    background-size: cover; /* Pastikan selalu menutupi layar */
-    background-position: center;
-    /* Properti flex diatur di sini untuk halaman Home */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%; /* Penting untuk responsif */
-    min-height: 100vh;
-    padding-left: 70px; /* Gunakan padding, lebih baik dari margin-left */
+    align-items: flex-start;  
+    margin-left: 70px;        
+    color: #285430;
 }
-
-.menu, .topics, .rule, .maps {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    min-height: 100vh;
-    padding: 20px 9%;
-    background: url('body_bg.png');
-    background-size: cover;
-    background-position: center;
-    color: #2f4f39;
-    text-align: center;
-    width: 100%; 
-}
-
-.heading-m, .heading-tp, .heading-rl, .heading-mp {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: #2f4f39;
-}
-
 .home h4 {
     font-size: clamp(12px, 2vw, 18px);
     color: #285430;
+    margin-bottom: 0;
     line-height: 1;
 }
 
-.home h1, .title { /* Menggabungkan h1 dan title */
+.home h1 {
+    font-size: clamp(32px, 10vw, 100px);
+    color: #285430;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.title {
     font-weight: 800;
     color: #285430;
     letter-spacing: 2px;
     line-height: 1;
     font-size: clamp(32px, 10vw, 100px);
-    margin: 2px 0 10px;
+    margin-top: 2px;
+    margin-bottom: 10px;
 }
 
-/* Tombol START */
-.btn-start {
-    display: inline-flex;
+.START {
+    font-size: 80px;
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn-start {
+    display: inline-flex;             
+    justify-content: center;          
+    align-items: center;            
     width: 90px;
     height: 40px;
-    margin: 2px;
+    margin: 2px;                      
     background: transparent;
     border: 2px solid #609966;
     border-radius: 40px;
@@ -84,7 +75,8 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: all 0.3s ease-in-out;
-    text-align: center;
+    box-sizing: border-box;
+    text-align: center;   
 }
 
 .btn-start:hover {
@@ -94,33 +86,81 @@ body {
     box-shadow: 0 0 15px #93DA97;
 }
 
-/* Wadah untuk Kartu (Menu, Topics, Rule, Maps) */
-.wrapper-menu, .wrapper-tp, .wrapper-rl, .wrapper-mp {
+/* ================================================= */
+/* MENU, TOPICS, RULE, MAPS (GABUNGAN LAYOUT HALAMAN) */
+/* ================================================= */
+
+/* Properti umum untuk halaman menu, topics, rule, maps */
+.menu, .topics, .rule, .maps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('body_bg.png');
+    color: #2f4f39;
+    text-align: center;
+    align-items: center; 
+}
+
+/* Properti padding umum (digunakan oleh menu dan topics) */
+.menu, .topics {
+    padding: 20px 9%;
+}
+
+/* Properti padding khusus (digunakan oleh rule dan maps) */
+.rule, .maps {
+    padding: 100px 40%;
+}
+
+/* Gabungan Heading */
+.menu .heading-m, .topics .heading-tp, .menu .heading-rl, .menu .heading-mp, .topics .heading-tp {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Gabungan Wrapper Cards */
+.menu .wrapper-menu, .topics .wrapper-tp, .menu .wrapper-rl, .menu .wrapper-mp {
     display: grid;
-    /* Grid 4 kolom untuk desktop */
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1200px; /* Batas lebar agar tidak terlalu melebar di layar super besar */
+    max-width: 1200px; 
     width: 100%;
     justify-items: center;
 }
 
-/* Kotak Kartu */
-.wrapper-menu .box, .wrapper-tp .box, .wrapper-rl .box, .wrapper-mp .box {
-    padding: 20px; /* Mengurangi padding agar lebih fleksibel di HP */
+/* ================================================= */
+/* BOX & BUTTON STYLES */
+/* ================================================= */
+
+/* Gabungan Box Dasar (Menu, Rule, Maps) */
+.wrapper-menu .box, .wrapper-rl .box, .wrapper-mp .box {
+    padding: 100px 10px;
     background: #E8FFD7;
     border-radius: 10px;
     width: 100%;
-    max-width: 250px; /* Batas lebar kartu */
+    max-width: 250px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     transition: .5s;
 }
 
-.wrapper-menu .box:hover, .wrapper-tp .box:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+/* Box untuk Topics (unik karena padding dan max-width yang berbeda) */
+.wrapper-tp .box {
+    padding: 20px 20px;
+    background: #E8FFD7;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: .5s;
 }
 
+/* Gabungan Hover untuk Box */
+.wrapper-menu .box:hover, .wrapper-tp .box:hover, .wrapper-rl .box:hover, .wrapper-mp .box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px, rgba(0, 0, 0, .2);
+}
+
+/* Gabungan Style Konten Box */
 .box h2 {
     font-size: 20px;
 }
@@ -130,7 +170,7 @@ body {
     margin: 10px 0 18px;
 }
 
-/* Tombol Menu */
+/* Gabungan Style Tombol Menu Utama */
 .box .btn-menu, .box .btn-tp, .box .btn-rl, .box .btn-mp {
     display: inline-block;
     padding: 4px 10px;
@@ -148,6 +188,10 @@ body {
     color: #2f4f39;
 }
 
+/* ================================================= */
+/* BACK BUTTON STYLES (GABUNGAN) */
+/* ================================================= */
+
 .btn-backmcontainer {
     display: flex;
     justify-content: center;
@@ -155,7 +199,12 @@ body {
     margin-top: 40px;
 }
 
-.btn-backm, .btn-backtp, .btn-backmp { /* Menggabungkan semua tombol back */
+/* CATATAN: Karena ada properti 'position: relative; top: 30px;' yang berbeda di kode asli Anda */
+/* dan ukuran yang berbeda, saya akan mempertahankan versi .btn-backm dan .btn-backmp yang berbeda */
+/* agar tidak merusak tata letak uniknya, tetapi saya akan menyingkirkan pengulangan hover jika memungkinkan. */
+
+/* Tombol Back Menu */
+.btn-backm {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,59 +221,49 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     transition: all 0.3s ease;
-    margin-top: 40px; /* Mengganti posisi/top yang kurang stabil */
+    margin-top: 40px;
 }
 
+/* Tombol Back Topics */
+.btn-backtp {
+    position: relative;
+    top: 30px;
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #609966;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #609966;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Tombol Back Maps */
+.btn-backmp {
+    position: relative;
+    top: 30px;
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #609966;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #609966;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Gabungan Hover untuk Tombol Back */
 .btn-backm:hover, .btn-backtp:hover, .btn-backmp:hover {
     background: #609966;
     color: #fff;
     transform: scale(1.08);
     box-shadow: 0 0 15px #93DA97;
-}
-
-/* Untuk Tablet dan Layar Lebih Kecil (max-width: 1024px) */
-@media (max-width: 1024px) {
-    .home {
-        padding-left: 30px; /* Kurangi padding di layar lebih kecil */
-    }
-
-    /* Mengubah menu/topics dari 4 kolom menjadi 2 kolom */
-    .wrapper-menu, .wrapper-tp, .wrapper-rl, .wrapper-mp {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-}
-
-/* Untuk Ponsel (max-width: 768px) */
-@media (max-width: 768px) {
-    .home {
-        background-size: 150% auto;
-        background-position: 75% center;
-        text-align: center; /* Tengahkan teks di HP */
-        align-items: center;
-        padding-left: 0; /* Hapus padding kiri */
-        padding: 0 15px; /* Tambahkan padding samping agar tidak menempel */
-    }
-
-    .home h1, .title {
-        letter-spacing: 1px;
-    }
-
-    .wrapper-menu, .wrapper-tp, .wrapper-rl, .wrapper-mp {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .wrapper-menu .box, .wrapper-tp .box, .wrapper-rl .box, .wrapper-mp .box {
-        max-width: 100%; 
-    }
-    
-    .menu, .topics, .rule, .maps {
-        padding: 20px 5%; /* Kurangi padding horizontal agar lebih lega */
-        text-align: center;
-    }
-
-    .heading-m, .heading-tp, .heading-rl, .heading-mp {
-        font-size: 30px;
-    }
 }
