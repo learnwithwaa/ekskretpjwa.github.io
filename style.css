@@ -7,11 +7,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* ================================================= */
-/* BASE STYLES & LAYOUT UMUM             */
-/* ================================================= */
-
-/* Body/Section Umum */
 body {
     display: flex;
     align-items: center;
@@ -21,29 +16,26 @@ body {
     overflow-x: hidden; 
 }
 
-/* Pengaturan Background untuk Halaman Home */
 .home {
     background: url('home_bg2.png') no-repeat;
-    background-size: cover; /* Pastikan selalu menutupi layar */
-    background-position: center;
-    /* Properti flex diatur di sini untuk halaman Home */
+    background-size: cover; 
+    background-position: 70% center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 100%; /* Penting untuk responsif */
+    width: 100%; 
     min-height: 100vh;
     padding-left: 70px; /* Gunakan padding, lebih baik dari margin-left */
 }
 
-/* Pengaturan Background untuk Halaman Menu, Topics, Rule, Maps */
 .menu, .topics, .rule, .maps {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; /* Menengahkan konten di layar besar */
     min-height: 100vh;
-    padding: 20px 9%;
+    padding: 100px 15%;
     background: url('body_bg.png');
     background-size: cover;
     background-position: center;
@@ -52,17 +44,11 @@ body {
     width: 100%; /* Penting untuk responsif */
 }
 
-/* Heading Halaman */
 .heading-m, .heading-tp, .heading-rl, .heading-mp {
     font-size: 40px;
     margin-bottom: 20px;
     color: #2f4f39;
 }
-
-
-/* ================================================= */
-/* HOMEPAGE STYLES                 */
-/* ================================================= */
 
 .home h4 {
     font-size: clamp(12px, 2vw, 18px);
@@ -70,7 +56,7 @@ body {
     line-height: 1;
 }
 
-.home h1, .title { /* Menggabungkan h1 dan title */
+.home h1, .title { 
     font-weight: 800;
     color: #285430;
     letter-spacing: 2px;
@@ -79,7 +65,6 @@ body {
     margin: 2px 0 10px;
 }
 
-/* Tombol START */
 .btn-start {
     display: inline-flex;
     justify-content: center;
@@ -107,11 +92,6 @@ body {
     box-shadow: 0 0 15px #93DA97;
 }
 
-/* ================================================= */
-/* MENU/TOPICS STYLES              */
-/* ================================================= */
-
-/* Wadah untuk Kartu (Menu, Topics, Rule, Maps) */
 .wrapper-menu, .wrapper-tp, .wrapper-rl, .wrapper-mp {
     display: grid;
     /* Grid 4 kolom untuk desktop */
@@ -147,7 +127,6 @@ body {
     margin: 10px 0 18px;
 }
 
-/* Tombol Menu */
 .box .btn-menu, .box .btn-tp, .box .btn-rl, .box .btn-mp {
     display: inline-block;
     padding: 4px 10px;
@@ -164,11 +143,6 @@ body {
     background: transparent;
     color: #2f4f39;
 }
-
-
-/* ================================================= */
-/* BACK BUTTON STYLES              */
-/* ================================================= */
 
 .btn-backmcontainer {
     display: flex;
@@ -204,17 +178,12 @@ body {
     box-shadow: 0 0 15px #93DA97;
 }
 
-/* ================================================= */
-/* MEDIA QUERIES (RESPONSIVE)         */
-/* ================================================= */
-
 /* Untuk Tablet dan Layar Lebih Kecil (max-width: 1024px) */
 @media (max-width: 1024px) {
     .home {
         padding-left: 30px; /* Kurangi padding di layar lebih kecil */
     }
 
-    /* Mengubah menu/topics dari 4 kolom menjadi 2 kolom */
     .wrapper-menu, .wrapper-tp, .wrapper-rl, .wrapper-mp {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -224,6 +193,7 @@ body {
 /* Untuk Ponsel (max-width: 768px) */
 @media (max-width: 768px) {
     .home {
+        background-position: 70% center;
         text-align: center; /* Tengahkan teks di HP */
         align-items: center;
         padding-left: 0; /* Hapus padding kiri */
@@ -246,7 +216,7 @@ body {
     }
     
     .menu, .topics, .rule, .maps {
-        padding: 20px 5%; /* Kurangi padding horizontal agar lebih lega */
+        padding: 40px 5%; /* Kurangi padding horizontal agar lebih lega */
         text-align: center;
     }
 
